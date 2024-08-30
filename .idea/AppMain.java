@@ -7,4 +7,10 @@ class AppMain {
         }
 
     }
+
+}
+class kiki {
+    public static void main(String[] args) {
+
+    }
 }
