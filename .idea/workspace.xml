@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="makeroom" />
+    <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="makeroom">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +53,7 @@
     "Application.AppMain.executor": "Run",
     "Application.GamePlay.executor": "Run",
     "Application.MainFrame.executor": "Run",
+    "Application.MainGUI.executor": "Run",
     "Application.Menu.executor": "Run",
     "Application.NextFrame.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -65,9 +70,16 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.MainFrame">
+  <component name="RunManager" selected="Application.MainGUI">
     <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainFrame" />
+      <module name="AppGame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainGUI" />
       <module name="AppGame" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -95,6 +107,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainGUI" />
         <item itemvalue="Application.MainFrame" />
         <item itemvalue="Application.NextFrame" />
       </list>
@@ -177,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725094674922</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="makeroom">
+      <option name="closed" value="true" />
+      <created>1725094837752</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1725094837752</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +220,7 @@
     <MESSAGE value="fist commit class player" />
     <MESSAGE value="commit class player enemy GamePlay RollDice Character" />
     <MESSAGE value="commit new class player enemy GamePlay RollDice Character" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/MainFrame.form&#10;#&#9;src/main/java/MainFrame.java" />
     <MESSAGE value="makeroom" />
     <option name="LAST_COMMIT_MESSAGE" value="makeroom" />
   </component>
