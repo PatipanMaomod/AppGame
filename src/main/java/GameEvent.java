@@ -6,7 +6,7 @@ public class GameEvent {
     private RollDice rollDice;
     private Scanner sc;
 
-    // Constructor to initialize GameEvent with player, enemy, rollDice, and scanner
+    // Constructor
     public GameEvent(Player player, Enemy enemy, RollDice rollDice, Scanner sc) {
         this.player = player;
         this.enemy = enemy;
@@ -17,17 +17,18 @@ public class GameEvent {
     // Start the game
     public void startGame() {
         boolean gameRunning = true;
+        System.out.println(player);
+        System.out.println(enemy);
+
         while (gameRunning) {
             System.out.print("Do you want to roll the dice? (y/n): ");
             String choice = sc.nextLine();
 
+
             if (choice.equalsIgnoreCase("y")) {
                 int rollResult = rollDice.roll();
                 System.out.println("You rolled a " + rollResult);
-                player.setPoints(rollResult);
-
-                int skillType = getSkillType();
-                processSkill(skillType);
+                player.addPoints(rollResult);
 
                 // Display updated status
                 System.out.println(player);
@@ -43,7 +44,8 @@ public class GameEvent {
                 }
 
             } else if (choice.equalsIgnoreCase("n")) {
-                System.out.println("You chose not to roll the dice.");
+                int skillType = getSkillType();
+                processSkill(skillType);
             } else {
                 System.out.println("Invalid choice. Please enter 'y' or 'n'.");
             }
@@ -66,8 +68,11 @@ public class GameEvent {
                 }
             } else {
                 System.out.println("Invalid input. Please enter a number.");
+                System.out.println(player);
+                System.out.println(enemy);
                 sc.nextLine(); // Clear invalid input
             }
+
         }
         return skillType;
     }
@@ -77,24 +82,30 @@ public class GameEvent {
         switch (skillType) {
             case 1:
                 if (player.getPoints() > 0) {
-                    enemy.setHp(enemy.getHp() - 15);
-                    player.setPoints(player.getPoints() - 1);
+                    enemy.takeDMG(15);
+                    player.subPoints(1);
+                    System.out.println("Points -1");
+                    System.out.println(enemy.getName()+" - 15 hp");
                 } else {
                     System.out.println("Not enough points.");
                 }
                 break;
             case 2:
                 if (player.getPoints() >= 5) {
-                    enemy.setHp(enemy.getHp() - 5);
-                    player.setPoints(player.getPoints() - 3);
+                    enemy.takeDMG(5);
+                    player.subPoints(3);
+                    System.out.println("Points -3");
+                    System.out.println(enemy.getName()+" - 5 hp");
                 } else {
                     System.out.println("Not enough points.");
                 }
                 break;
             case 3:
                 if (player.getPoints() >= 5) {
-                    player.setHp(player.getHp() + 3);
-                    player.setPoints(player.getPoints() - 5);
+                    player.heal(3);
+                    player.subPoints(5);
+                    System.out.println("Points -5");
+                    System.out.println(player.getName()+" + 3 hp");
                 } else {
                     System.out.println("Not enough points.");
                 }
@@ -102,6 +113,9 @@ public class GameEvent {
             default:
                 System.out.println("Invalid skill type.");
                 break;
+
         }
+        System.out.println(player);
+        System.out.println(enemy);
     }
 }

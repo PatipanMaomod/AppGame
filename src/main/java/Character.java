@@ -31,18 +31,27 @@ public class Character {
         this.points = points;
     }
 
+    public void addHp(int hp) {
+        this.hp += hp;
+    }
+
     // Method ดามาจี
     public void takeDMG(int dmg) {
         hp -= dmg;
     }
     // Method ฮีน
-    public void heal(int dmg) {
-        hp += dmg;
+    public void heal(int amount) {
+        this.hp += amount;
     }
-    // Method skill
-    public void useSkill(int skillType){
-        //ไม่รู้
+
+
+    public void addPoints(int points) {
+        this.points += points;
     }
+    public void  subPoints(int points) {
+        this.points -= points;
+    }
+
     //บอกค่าตา่งๆ
     @Override
     public String toString() {
