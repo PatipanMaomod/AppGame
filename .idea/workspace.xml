@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="commit new class player enemy GamePlay RollDice Character">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MainFrame.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/NextFrame.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/NextFrame.java" afterDir="false" />
+    <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="MainFrame">
+      <change afterPath="$PROJECT_DIR$/src/main/java/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GamePlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/NextFrame.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/NextFrame.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +56,14 @@
   "keyToString": {
     "Application.AppMain.executor": "Run",
     "Application.GamePlay.executor": "Run",
+    "Application.MainFrame.executor": "Run",
+    "Application.MainGUI.executor": "Run",
     "Application.Menu.executor": "Run",
     "Application.NextFrame.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "2",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -69,9 +77,16 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.MainFrame">
-    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.MainGUI">
+    <configuration name="MainFrame" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainFrame" />
+      <module name="AppGame" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainGUI" />
       <module name="AppGame" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,7 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainFrame" />
+        <item itemvalue="Application.MainGUI" />
         <item itemvalue="Application.NextFrame" />
       </list>
     </recent_temporary>
@@ -123,7 +138,7 @@
       <workItem from="1725037048098" duration="334000" />
       <workItem from="1725038946570" duration="10000" />
       <workItem from="1725080598801" duration="4000" />
-      <workItem from="1725080610176" duration="10489000" />
+      <workItem from="1725080610176" duration="13546000" />
     </task>
     <task id="LOCAL-00001" summary="again">
       <option name="closed" value="true" />
@@ -173,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725090951415</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="MainFrame">
+      <option name="closed" value="true" />
+      <created>1725091324924</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725091324924</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +218,7 @@
     <MESSAGE value="fist commit class player" />
     <MESSAGE value="commit class player enemy GamePlay RollDice Character" />
     <MESSAGE value="commit new class player enemy GamePlay RollDice Character" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit new class player enemy GamePlay RollDice Character" />
+    <MESSAGE value="MainFrame" />
+    <option name="LAST_COMMIT_MESSAGE" value="MainFrame" />
   </component>
 </project>
