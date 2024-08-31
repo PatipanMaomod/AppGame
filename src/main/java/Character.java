@@ -12,43 +12,54 @@ public class Character {
 
     // Getter
     public String getName() {
+
         return name;
     }
     public int getHp() {
+
         return hp;
     }
     public int getPoints() {
+
         return points;
     }
     //Setter
     public void setName(String name) {
+
         this.name = name;
     }
     public void setHp(int hp) {
+
         this.hp = hp;
     }
     public void setPoints(int points) {
+
         this.points = points;
     }
 
     public void addHp(int hp) {
+
         this.hp += hp;
     }
 
     // Method ดามาจี
     public void takeDMG(int dmg) {
+
         hp -= dmg;
     }
     // Method ฮีน
     public void heal(int amount) {
+
         this.hp += amount;
     }
 
 
     public void addPoints(int points) {
+
         this.points += points;
     }
     public void  subPoints(int points) {
+
         this.points -= points;
     }
 
