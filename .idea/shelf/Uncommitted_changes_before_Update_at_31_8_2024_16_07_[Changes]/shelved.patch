@@ -1,0 +1,93 @@
+Index: src/main/java/MainGUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class MainGUI extends JFrame {\r\n    private JPanel Tpost;\r\n    private JLabel jsMain;\r\n    private JButton GOButton;\r\n\r\n    public MainGUI() {\r\n        setTitle(\"Main GUI\");\r\n        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        setSize(800, 600);\r\n        setLocationRelativeTo(null);\r\n        setVisible(true);\r\n\r\n        // สร้างปุ่ม GOButton และกำหนดข้อความ\r\n        GOButton = new JButton(\"GO\");\r\n\r\n        // ตั้งค่า Layout และเพิ่มปุ่ม GOButton\r\n        setLayout(new java.awt.FlowLayout());\r\n        add(GOButton);\r\n\r\n        GOButton.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                JOptionPane.showMessageDialog(null, \"Hello World\");\r\n            }\r\n        });\r\n        setVisible(true);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new MainGUI();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/MainGUI.java b/src/main/java/MainGUI.java
+--- a/src/main/java/MainGUI.java	(revision 2a3ac128a8db64c511e20046b1ac53f1fbcdc434)
++++ b/src/main/java/MainGUI.java	(date 1725095152968)
+@@ -21,6 +21,7 @@
+         setLayout(new java.awt.FlowLayout());
+         add(GOButton);
+ 
++        // ตั้งค่า ActionListener ให้กับปุ่ม GOButton
+         GOButton.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+@@ -30,6 +31,11 @@
+         setVisible(true);
+     }
+ 
++    private void openNextWindow() {
++        // สร้างหน้าต่างถัดไปและทำให้มันมองเห็นได้
++        NextWindow nextWindow = new NextWindow();
++        nextWindow.setVisible(true);
++    }
+     public static void main(String[] args) {
+         new MainGUI();
+     }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2aaab014-4599-4b4f-a368-bf1f2ac575fc\" name=\"Changes\" comment=\"MainFrame\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/MainGUI.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/GamePlay.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/GamePlay.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/MainFrame.form\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/MainGUI.form\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/MainFrame.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/NextFrame.form\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/NextFrame.java\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;PatipanMaomod&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/PatipanMaomod/AppGame.git&quot;,\r\n    &quot;accountId&quot;: &quot;be2c448e-01f4-4ce7-b4b4-35fdfc7007a7&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 8\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2lO2xJ5dFsGXjfCRwOmw7AOJkRw\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.AppMain.executor\": \"Run\",\r\n    \"Application.GamePlay.executor\": \"Run\",\r\n    \"Application.MainFrame.executor\": \"Run\",\r\n    \"Application.MainGUI.executor\": \"Run\",\r\n    \"Application.Menu.executor\": \"Run\",\r\n    \"Application.NextFrame.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW\": \"true\",\r\n    \"UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH\": \"2\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\" selected=\"Application.MainGUI\">\r\n    <configuration name=\"MainFrame\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MainFrame\" />\r\n      <module name=\"AppGame\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"MainGUI\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"MainGUI\" />\r\n      <module name=\"AppGame\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Menu\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"menu.Menu\" />\r\n      <module name=\"AppGame\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"menu.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"NextFrame\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"NextFrame\" />\r\n      <module name=\"AppGame\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.MainGUI\" />\r\n        <item itemvalue=\"Application.NextFrame\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2aaab014-4599-4b4f-a368-bf1f2ac575fc\" name=\"Changes\" comment=\"\" />\r\n      <created>1725037047067</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1725037047067</updated>\r\n      <workItem from=\"1725037048098\" duration=\"334000\" />\r\n      <workItem from=\"1725038946570\" duration=\"10000\" />\r\n      <workItem from=\"1725080598801\" duration=\"4000\" />\r\n      <workItem from=\"1725080610176\" duration=\"13546000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"again\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1725037236411</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1725037236411</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"again\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1725081421934</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1725081421934</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"fist commit class player\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1725081500058</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1725081500058</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"commit class player enemy GamePlay RollDice Character\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1725087263902</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1725087263903</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"commit new class player enemy GamePlay RollDice Character\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1725088009671</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1725088009671</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"commit new class player enemy GamePlay RollDice Character\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1725090951415</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1725090951415</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"MainFrame\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1725091324924</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1725091324924</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"again\" />\r\n    <MESSAGE value=\"fist commit class player\" />\r\n    <MESSAGE value=\"commit class player enemy GamePlay RollDice Character\" />\r\n    <MESSAGE value=\"commit new class player enemy GamePlay RollDice Character\" />\r\n    <MESSAGE value=\"MainFrame\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"MainFrame\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2a3ac128a8db64c511e20046b1ac53f1fbcdc434)
++++ b/.idea/workspace.xml	(date 1725095153019)
+@@ -4,14 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="MainFrame">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/MainGUI.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/GamePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GamePlay.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainGUI.form" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/NextFrame.form" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/NextFrame.java" beforeDir="false" />
++    <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="new Gui">
++      <change beforePath="$PROJECT_DIR$/src/main/java/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainGUI.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -138,7 +132,7 @@
+       <workItem from="1725037048098" duration="334000" />
+       <workItem from="1725038946570" duration="10000" />
+       <workItem from="1725080598801" duration="4000" />
+-      <workItem from="1725080610176" duration="13546000" />
++      <workItem from="1725080610176" duration="14389000" />
+     </task>
+     <task id="LOCAL-00001" summary="again">
+       <option name="closed" value="true" />
+@@ -196,7 +190,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1725091324924</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="new Gui">
++      <option name="closed" value="true" />
++      <created>1725094503680</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1725094503680</updated>
++    </task>
++    <option name="localTasksCounter" value="9" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -219,6 +221,7 @@
+     <MESSAGE value="commit class player enemy GamePlay RollDice Character" />
+     <MESSAGE value="commit new class player enemy GamePlay RollDice Character" />
+     <MESSAGE value="MainFrame" />
+-    <option name="LAST_COMMIT_MESSAGE" value="MainFrame" />
++    <MESSAGE value="new Gui" />
++    <option name="LAST_COMMIT_MESSAGE" value="new Gui" />
+   </component>
+ </project>
+\ No newline at end of file
