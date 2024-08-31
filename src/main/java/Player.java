@@ -1,32 +1,6 @@
-public class Player {
-    private String name;
-    private int hp;
-    private int points;
-
-    //Constructor player
+public class Player extends Character{
+    //constructor
     public Player(String name) {
-        this.name = name;
-        this.hp = 20;
-        this.points = 0;
+        super(name , 20 ,0);//set ค่าของ player
     }
-
-    //attributes คุณลักษณะ ของ player
-    public String getName() {
-        return name;
-    }
-    public int getHp() {
-        return hp;
-    }
-    public int getPoints() {
-        return points;
-    }
-    //setter methods
-    public void setHp(int hp) {
-        this.hp = hp;
-    }
-    public void setPoints(int points) {
-        this.points = points;
-    }
-
-
 }

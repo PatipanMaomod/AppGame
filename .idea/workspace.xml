@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="again">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+    <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="fist commit class player">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Character.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Enemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GamePlay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RollDice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AppMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,23 +50,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AppMain.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppMain.executor": "Run",
+    "Application.GamePlay.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -83,7 +87,7 @@
       <workItem from="1725037048098" duration="334000" />
       <workItem from="1725038946570" duration="10000" />
       <workItem from="1725080598801" duration="4000" />
-      <workItem from="1725080610176" duration="657000" />
+      <workItem from="1725080610176" duration="6381000" />
     </task>
     <task id="LOCAL-00001" summary="again">
       <option name="closed" value="true" />
@@ -93,7 +97,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725037236411</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="again">
+      <option name="closed" value="true" />
+      <created>1725081421934</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725081421934</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fist commit class player">
+      <option name="closed" value="true" />
+      <created>1725081500058</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725081500058</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="again" />
-    <option name="LAST_COMMIT_MESSAGE" value="again" />
+    <MESSAGE value="fist commit class player" />
+    <option name="LAST_COMMIT_MESSAGE" value="fist commit class player" />
   </component>
 </project>
