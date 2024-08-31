@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2aaab014-4599-4b4f-a368-bf1f2ac575fc" name="Changes" comment="commit new class player enemy GamePlay RollDice Character">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MainFrame.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MainFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/NextFrame.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/NextFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ARFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ARFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DRFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DRFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/NRFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/NRFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RulesFrame.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/RulesFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainFrame.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +60,7 @@
   "keyToString": {
     "Application.AppMain.executor": "Run",
     "Application.GamePlay.executor": "Run",
+    "Application.MainFrame.executor": "Run",
     "Application.Menu.executor": "Run",
     "Application.NextFrame.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",

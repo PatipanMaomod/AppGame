@@ -5,9 +5,13 @@ import java.awt.event.ActionListener;
 public class MainFrame extends JFrame {
 
     private JButton openNextButton;
+    private JButton button1;
+    private JPanel panel1;
 
     public MainFrame() {
         initComponents();
+        button1.addActionListener(new ActionListener() {
+        });
     }
 
     private void initComponents() {
