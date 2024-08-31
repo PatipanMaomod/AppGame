@@ -26,7 +26,7 @@ public class GameEvent {
 
 
             if (choice.equalsIgnoreCase("y")) {
-                int rollResult = rollDice.roll();
+                int rollResult = rollDice.roll(6, 1);
                 System.out.println("You rolled a " + rollResult);
                 player.addPoints(rollResult);
 
