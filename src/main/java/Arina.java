@@ -1,10 +1,12 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Arina extends JFrame {
     private JButton backButton;
     private JPanel panel;
+    private JPanel bottomPanel;
     private JButton attackButton;
     private JButton skilsButton;
     private JButton healButton;
@@ -75,12 +77,20 @@ public class Arina extends JFrame {
         panel.add(playerImageLabel);
         panel.add(enemyImageLabel);
 
+
+
+        bottomPanel = new JPanel();
+        bottomPanel.setBounds(0, 500, 800, 100); // Position at the bottom
+        bottomPanel.setBackground(Color.blue);
+        bottomPanel.setLayout(null);
+
         // Set JFrame properties
         setTitle("GAME GOOD");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
+        panel.add(bottomPanel);
 
 
         // Add ActionListeners
