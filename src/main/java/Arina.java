@@ -2,12 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 
 public class Arina extends JFrame {
     private JButton backButton;
     private JPanel panel;
     private JPanel bottomPanel;
+    private TrianglePanel enemyPanel;
+    private EllipsePanel playerPanel;
     private JButton attackButton;
     private JButton skilsButton;
     private JButton healButton;
@@ -24,14 +25,15 @@ public class Arina extends JFrame {
     private Player player;
     private Enemy enemy;
     private int turnCount = 0;
-
+    Font f = new Font("Comic Sans MS", Font.PLAIN, 20);
 
     public Arina() {
 
         panel = new JPanel();
+        enemyPanel = new TrianglePanel();
+        playerPanel = new EllipsePanel();
         setContentPane(panel);
         panel.setLayout(null);
-
 
         player = new Player(JOptionPane.showInputDialog(null, "Enter your name:"),100,0);
         enemy = new Enemy("KIKI",100,0);
@@ -39,29 +41,36 @@ public class Arina extends JFrame {
         playerImageLabel = new JLabel(playerImage);
         enemyImageLabel = new JLabel(enemyImage);
 
-        playerImage = new ImageIcon(".//res//images.jpg");
-        playerImageLabel.setIcon(playerImage);
 
         backButton = new JButton("Back");
+        backButton.setFont(f);
         attackButton = new JButton("Attack");
+        attackButton.setFont(f);
         skilsButton = new JButton("Skills");
+        skilsButton.setFont(f);
         healButton = new JButton("Heal");
-        tSusButton = new JButton("TSus");
+        healButton.setFont(f);
+        tSusButton = new JButton("Sus");
+        tSusButton.setFont(f);
         rollButton = new CircularButton("Roll");
+        rollButton.setFont(f);
 
         state1 = new JLabel(String.valueOf(player.getName()+" HP: "+player.getHP()));
-        state1.setFont(new Font("Serif", Font.BOLD, 20));
+        state1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 
         state2 = new JLabel(String.valueOf(enemy.getName()+": "+enemy.getHP()));
-        state2.setFont(new Font("Serif", Font.BOLD, 20));
+        state2.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 
         state3 = new JLabel(String.valueOf("Point : " + player.points));
-        state3.setFont(new Font("Serif", Font.BOLD, 20));
+        state3.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+        playerImageLabel.setIcon(playerImage);
+
+        playerImage = new ImageIcon(".//res//YOU.png");
 
         //LOG
         Log = new JLabel("");
         Log.setBounds(50,400,30100,30);
-        Log.setFont(new Font("Serif", Font.BOLD, 20));
+        Log.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
 
         // Set bounds for components
         backButton.setBounds(650, 500, 100, 30);
@@ -70,6 +79,8 @@ public class Arina extends JFrame {
         healButton.setBounds(330, 500, 100, 30);
         tSusButton.setBounds(480, 500, 100, 30);
         rollButton.setBounds(600, 400, 100, 60);
+        playerPanel.setBounds(50, 120, 200, 200);
+        enemyPanel.setBounds(500, 120, 200, 250);
         state1.setBounds(50, 50, 1000, 30);//player
         state2.setBounds(600, 50, 1000, 30);//enemy
         state3.setBounds(50, 70, 1000, 30);//point
@@ -90,6 +101,10 @@ public class Arina extends JFrame {
         panel.add(playerImageLabel);
         panel.add(enemyImageLabel);
         panel.add(Log);
+        panel.add(enemyPanel);
+        panel.add(playerPanel);
+
+
 
 
 
@@ -98,6 +113,7 @@ public class Arina extends JFrame {
         bottomPanel.setBounds(0, 450, 800, 500);
         bottomPanel.setBackground(Color.GRAY);
         bottomPanel.setLayout(null);
+
 
         // Set JFrame properties
         setTitle("GAME GOOD");

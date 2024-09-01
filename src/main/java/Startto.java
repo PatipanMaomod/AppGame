@@ -14,13 +14,14 @@ public class Startto extends JFrame {
         panel.setLayout(new BorderLayout());
 
         button1 = new JButton("Start Game");
-        label = new JLabel("WORD OF THE GAMEEEEEEE");
-        label.setFont(new Font("Serif", Font.BOLD, 30));
+        label = new JLabel("Celestial Duel:\nThe Ultimate Confrontation");
+        label.setFont(new Font("Comic Sans MS", Font.BOLD, 30));
+        button1.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
 
 
 
-        label.setBounds(200, 200, 3000, 30);
-        button1.setBounds(340, 270, 100, 30);
+        label.setBounds(70, 200, 3000, 30);
+        button1.setBounds(330, 270, 150, 30);
         panel.setLayout(null);
 
         panel.add(label);
