@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 public class Arina extends JFrame {
     private JButton backButton;
@@ -30,14 +31,16 @@ public class Arina extends JFrame {
         panel = new JPanel();
         setContentPane(panel);
         panel.setLayout(null);
-        playerImage = new ImageIcon("C:\\java\\AppGame\\image\\Player\\images.jpg");
-        enemyImage = new ImageIcon("C:\\java\\AppGame\\image\\Player\\Waterdispenser.png");
+
 
         player = new Player(JOptionPane.showInputDialog(null, "Enter your name:"),100,0);
         enemy = new Enemy("KIKI",100,0);
 
         playerImageLabel = new JLabel(playerImage);
         enemyImageLabel = new JLabel(enemyImage);
+
+        playerImage = new ImageIcon(".//res//images.jpg");
+        playerImageLabel.setIcon(playerImage);
 
         backButton = new JButton("Back");
         attackButton = new JButton("Attack");
@@ -201,12 +204,6 @@ public class Arina extends JFrame {
         });
 
 
-
-
-
-
-
-
     }
     private void turnEnemy() {
         enemy.setTurnCount(turnCount);
@@ -228,6 +225,7 @@ public class Arina extends JFrame {
             setVisible(false);
         }
     }
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
