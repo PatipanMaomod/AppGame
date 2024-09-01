@@ -59,11 +59,11 @@ public class Arina extends JFrame {
         //LOG
         Log = new JLabel("");
         Log.setBounds(50,400,30100,30);
-        Log.setFont(new Font("Serif", Font.BOLD, 30));
+        Log.setFont(new Font("Serif", Font.BOLD, 20));
 
         LogEnamy = new JLabel("");
         LogEnamy.setFont(new Font("Serif", Font.BOLD, 20));
-        LogEnamy.setBounds(50,400,3000,30);
+        LogEnamy.setBounds(500,300,300,30);
 
         // Set bounds for components
         backButton.setBounds(650, 500, 100, 30);
@@ -221,19 +221,19 @@ public class Arina extends JFrame {
         RollDice rd = new RollDice();
         if (turnCount ==3 ) {
             int damage = rd.roll(5, 15);
-            Log.setText("Enemy Attack, player's HP decreased by "+damage+".");
+            LogEnamy.setText("Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount ==5) {
             int damage = rd.roll(15, 30);
-            Log.setText("Enemy Attack, player's HP decreased by "+damage+".");
+            LogEnamy.setText("Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount ==8) {
             int damage = rd.roll(30, 65);
-            Log.setText("Enemy Attack, player's HP decreased by "+damage+".");
+            LogEnamy.setText("Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount >10) {
             int damage = rd.roll(70, 100);
-            Log.setText("Enemy Attack, player's HP decreased by "+damage+".");
+            LogEnamy.setText("Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }
         State();
