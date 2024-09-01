@@ -1,71 +1,35 @@
-public class Character {
-    private String name;
-    private int hp;
-    private int points;
+public abstract class Character {
+    protected int HP;
+    protected int points;
+    protected String name;
 
-    // Constructor
-    public Character(String name, int hp, int points) {
+    public Character(String name, int HP, int points) {
         this.name = name;
-        this.hp = hp;
+        this.HP = HP;
         this.points = points;
     }
 
-    // Getter
-    public String getName() {
-
-        return name;
+    public int getHP() {
+        return HP;
     }
-    public int getHp() {
 
-        return hp;
+    public void setHP() {
+        this.HP = HP;
     }
+
     public int getPoints() {
-
         return points;
     }
-    //Setter
-    public void setName(String name) {
 
-        this.name = name;
-    }
-    public void setHp(int hp) {
-
-        this.hp = hp;
-    }
     public void setPoints(int points) {
-
         this.points = points;
     }
 
-    public void addHp(int hp) {
-
-        this.hp += hp;
+    public String getName() {
+        return name;
     }
 
-    // Method ดามาจี
-    public void takeDMG(int dmg) {
+    public abstract void takeDamage(int damage);
 
-        hp -= dmg;
-    }
-    // Method ฮีน
-    public void heal(int amount) {
-
-        this.hp += amount;
-    }
-
-
-    public void addPoints(int points) {
-
-        this.points += points;
-    }
-    public void  subPoints(int points) {
-
-        this.points -= points;
-    }
-
-    //บอกค่าตา่งๆ
-    @Override
-    public String toString() {
-        return name + " [HP: " + hp + ", Points: " + points + "]";
-    }
+    public abstract void attack(Character target);
 }

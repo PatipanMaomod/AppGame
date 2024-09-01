@@ -18,16 +18,11 @@ public class Arina extends JFrame {
     private JLabel playerImageLabel;
     private JLabel enemyImageLabel;
     private JLabel Log;
-    private JLabel LogEnamy;
     private ImageIcon playerImage;
     private ImageIcon enemyImage;
-    private boolean playerTurn = true;
+    private Player player;
+    private Enemy enemy;
     private int turnCount = 0;
-    private int HP = 100;
-    private int HP2 = 100;
-    private int points = 0;
-
-
 
 
     public Arina() {
@@ -38,6 +33,9 @@ public class Arina extends JFrame {
         playerImage = new ImageIcon("C:\\java\\AppGame\\image\\Player\\images.jpg");
         enemyImage = new ImageIcon("C:\\java\\AppGame\\image\\Player\\Waterdispenser.png");
 
+        player = new Player(JOptionPane.showInputDialog(null, "Enter your name:"),100,0);
+        enemy = new Enemy("KIKI",100,0);
+
         playerImageLabel = new JLabel(playerImage);
         enemyImageLabel = new JLabel(enemyImage);
 
@@ -47,23 +45,20 @@ public class Arina extends JFrame {
         healButton = new JButton("Heal");
         tSusButton = new JButton("TSus");
         rollButton = new CircularButton("Roll");
-        state1 = new JLabel(String.valueOf("Player HP : "+HP));
+
+        state1 = new JLabel(String.valueOf(player.getName()+" HP: "+player.getHP()));
         state1.setFont(new Font("Serif", Font.BOLD, 20));
 
-        state2 = new JLabel(String.valueOf("Enemy HP : "+HP2));
+        state2 = new JLabel(String.valueOf(enemy.getName()+": "+enemy.getHP()));
         state2.setFont(new Font("Serif", Font.BOLD, 20));
 
-        state3 = new JLabel(String.valueOf("Point : " + points));
+        state3 = new JLabel(String.valueOf("Point : " + player.points));
         state3.setFont(new Font("Serif", Font.BOLD, 20));
 
         //LOG
         Log = new JLabel("");
         Log.setBounds(50,400,30100,30);
         Log.setFont(new Font("Serif", Font.BOLD, 20));
-
-        LogEnamy = new JLabel("");
-        LogEnamy.setFont(new Font("Serif", Font.BOLD, 20));
-        LogEnamy.setBounds(500,300,300,30);
 
         // Set bounds for components
         backButton.setBounds(650, 500, 100, 30);
@@ -135,27 +130,27 @@ public class Arina extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 RollDice Roll = new RollDice();
                 int x = Roll.roll(6, 1);
-                points += x;
+                player.setPoints(player.getPoints() + x);
                 Log.setText("+"+x+" point");
                 timer.start();
-                State();
+                turnCount++;
                 turnEnemy();
                 checkGameOver();
-                turnCount++;
+                State();
+
             }
         });
 
         attackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (playerTurn && points >= 3) {
-                    points -= 3;
-                    HP2 -= 10;
+                if (player.getPoints()>=3) {
+                    player.attack(enemy);
                     Log.setText("Attacked! Enemy HP decreased by 10.");
-                    State();
+                    turnCount++;
                     turnEnemy();
                     checkGameOver();
-                    turnCount++;
+                    State();
                 }else JOptionPane.showMessageDialog(null, "You don't have enough points!");
             }
         });
@@ -164,14 +159,13 @@ public class Arina extends JFrame {
         skilsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (points >= 5) {
-                    points -= 5;
-                    HP2 -= 50;
+                if (player.getPoints() >= 5) {
+                    player.useSkill(enemy);
                     Log.setText("Used Skill! Enemy HP decreased by 50.");
-                    State();
+                    turnCount++;
                     turnEnemy();
                     checkGameOver();
-                    turnCount++;
+                    State();
                 }else JOptionPane.showMessageDialog(null, "You don't have enough points!");
             }
         });
@@ -179,81 +173,63 @@ public class Arina extends JFrame {
         healButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (points >= 5) {
-                    points -= 5;
-                    HP += 10;
+                if (player.getPoints() >= 5) {
+                    player.heal();
                     Log.setText("Heal! +50 HP.");
-                    State();
+                    turnCount++;
                     turnEnemy();
                     checkGameOver();
-                    turnCount++;
+                    State();
                 }else JOptionPane.showMessageDialog(null, "You don't have enough points!");
-
             }
         });
+
 
         tSusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (points >= 20) {
-                    points -= 20;
-                    HP2 -= 100;
+                if (player.getPoints() >= 20) {
+                    player.useSpecialSkill(enemy);
                     Log.setText("Attacked! Enemy HP decreased by 100.");
-
-                    State();
+                    turnCount++;
                     turnEnemy();
                     checkGameOver();
-                    turnCount++;
+                    State();
                 }else JOptionPane.showMessageDialog(null, "You don't have enough points!");
-
             }
 
         });
 
+
+
+
+
+
+
+
+    }
+    private void turnEnemy() {
+        enemy.setTurnCount(turnCount);
+        enemy.attack(player);
     }
 
     private void State(){
-        state1.setText(String.valueOf("Player HP : "+HP));
-        state2.setText(String.valueOf("Enemy HP : "+HP2));
-        state3.setText(String.valueOf("Point : " + points));
-    }
-    private void turnEnemy(){
-        RollDice rd = new RollDice();
-        if (turnCount ==3 ) {
-            int damage = rd.roll(5, 15);
-            JOptionPane.showMessageDialog(null, "Enemy Attack, player's HP decreased by "+damage+".");
-            HP -= damage;
-        }if (turnCount ==5) {
-            int damage = rd.roll(15, 30);
-            JOptionPane.showMessageDialog(null, "Enemy Attack, player's HP decreased by "+damage+".");
-            HP -= damage;
-        }if (turnCount ==8) {
-            int damage = rd.roll(30, 65);
-            JOptionPane.showMessageDialog(null, "Enemy Attack, player's HP decreased by "+damage+".");
-            HP -= damage;
-        }if (turnCount >10) {
-            int damage = rd.roll(70, 100);
-            JOptionPane.showMessageDialog(null, "Enemy Attack, player's HP decreased by "+damage+".");
-            HP -= damage;
-        }
-        State();
+        state1.setText(String.valueOf(player.getName()+" HP: "+player.getHP()));
+        state2.setText(String.valueOf(enemy.getName()+ ": "+enemy.getHP()));
+        state3.setText(String.valueOf("Point : " + player.getPoints()));
     }
 
     private void checkGameOver() {
-        if (HP <= 0) {
-            HP = 0;
-            state1.setText("Player HP : " + HP);
-            JOptionPane.showMessageDialog(null, "YOU LOST!!");
+        if (player.getHP() <= 0) {
+            state1.setText(player.getName()+" HP :" + player.getHP());
+            JOptionPane.showMessageDialog(null, "!!YOU LOST!!");
             setVisible(false);
-        } else if (HP2 <= 0) {
-            HP2 = 0;
-            state2.setText("Enemy HP : " + HP2);
-            JOptionPane.showMessageDialog(null, "YOU WIN!!");
+        } else if (enemy.getHP() <= 0) {
+            state2.setText(enemy.getName()+": " + enemy.getHP());
+            JOptionPane.showMessageDialog(null, "!!YOU WIN!!");
             setVisible(false);
         }
-
     }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
@@ -262,4 +238,6 @@ public class Arina extends JFrame {
             }
         });
     }
+
+
 }

@@ -18,6 +18,7 @@ public class Startto extends JFrame {
         label.setFont(new Font("Serif", Font.BOLD, 30));
 
 
+
         label.setBounds(200, 200, 3000, 30);
         button1.setBounds(340, 270, 100, 30);
         panel.setLayout(null);
@@ -40,6 +41,7 @@ public class Startto extends JFrame {
             }
         });
     }
+
 
 
     private void openNextWindow() {
