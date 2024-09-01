@@ -13,6 +13,10 @@ public class Arina extends JFrame {
     private JLabel state1;
     private JLabel state2;
     private JLabel state3;
+    private JLabel playerImageLabel;
+    private JLabel enemyImageLabel;
+    private ImageIcon playerImage;
+    private ImageIcon enemyImage;
     private boolean playerTurn = true;
     private int turnCount = 0;
     private int HP = 100;
@@ -20,13 +24,18 @@ public class Arina extends JFrame {
     private int points = 0;
 
 
+
+
     public Arina() {
 
         panel = new JPanel();
         setContentPane(panel);
         panel.setLayout(null);
-        RollDice rollDice = new RollDice();
+        playerImage = new ImageIcon("C:\\java\\AppGame\\image\\Player\\images.jpg");
+        enemyImage = new ImageIcon("C:\\java\\AppGame\\image\\Player\\Waterdispenser.png");
 
+        playerImageLabel = new JLabel(playerImage);
+        enemyImageLabel = new JLabel(enemyImage);
         backButton = new JButton("Back");
         attackButton = new JButton("Attack");
         skilsButton = new JButton("Skills");
@@ -36,6 +45,8 @@ public class Arina extends JFrame {
         state1 = new JLabel(String.valueOf("Player HP : "+HP));
         state2 = new JLabel(String.valueOf("Enemy HP : "+HP2));
         state3 = new JLabel(String.valueOf("Point : " + points));
+
+
 
         // Set bounds for components
         backButton.setBounds(650, 500, 100, 30);
@@ -47,6 +58,8 @@ public class Arina extends JFrame {
         state1.setBounds(50, 50, 100, 30);
         state2.setBounds(650, 50, 100, 30);
         state3.setBounds(50, 70, 100, 30);
+        playerImageLabel.setBounds(50, 120, 200, 200);
+        enemyImageLabel.setBounds(500, 120, 200, 250);
 
 
         // Add components to panel
@@ -59,6 +72,8 @@ public class Arina extends JFrame {
         panel.add(state2);
         panel.add(state3);
         panel.add(rollButton);
+        panel.add(playerImageLabel);
+        panel.add(enemyImageLabel);
 
         // Set JFrame properties
         setTitle("GAME GOOD");
@@ -66,6 +81,7 @@ public class Arina extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);
         setVisible(true);
+
 
         // Add ActionListeners
         backButton.addActionListener(new ActionListener() {
@@ -189,6 +205,8 @@ public class Arina extends JFrame {
             setVisible(false);
         }
     }
+
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
