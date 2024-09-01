@@ -212,13 +212,11 @@ public class Arina extends JFrame {
         enemy.setTurnCount(turnCount);
         enemy.attack(player);
     }
-
     private void State(){
         state1.setText(String.valueOf(player.getName()+" HP: "+player.getHP()));
         state2.setText(String.valueOf(enemy.getName()+ ": "+enemy.getHP()));
         state3.setText(String.valueOf("Point : " + player.getPoints()));
     }
-
     private void checkGameOver() {
         if (player.getHP() <= 0) {
             state1.setText(player.getName()+" HP :" + player.getHP());
