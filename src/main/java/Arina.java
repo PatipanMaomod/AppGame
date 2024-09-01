@@ -221,19 +221,19 @@ public class Arina extends JFrame {
         RollDice rd = new RollDice();
         if (turnCount ==3 ) {
             int damage = rd.roll(5, 15);
-            LogEnamy.setText("Enemy Attack, player's HP decreased by "+damage+".");
+            JOptionPane.showMessageDialog(null, "Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount ==5) {
             int damage = rd.roll(15, 30);
-            LogEnamy.setText("Enemy Attack, player's HP decreased by "+damage+".");
+            JOptionPane.showMessageDialog(null, "Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount ==8) {
             int damage = rd.roll(30, 65);
-            LogEnamy.setText("Enemy Attack, player's HP decreased by "+damage+".");
+            JOptionPane.showMessageDialog(null, "Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount >10) {
             int damage = rd.roll(70, 100);
-            LogEnamy.setText("Enemy Attack, player's HP decreased by "+damage+".");
+            JOptionPane.showMessageDialog(null, "Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }
         State();
