@@ -11,12 +11,13 @@ public class Arina extends JFrame {
     private JButton skilsButton;
     private JButton healButton;
     private JButton tSusButton;
-    private JButton rollButton;
+    private CircularButton rollButton;
     private JLabel state1;
     private JLabel state2;
     private JLabel state3;
     private JLabel playerImageLabel;
     private JLabel enemyImageLabel;
+    private JLabel Log;
     private ImageIcon playerImage;
     private ImageIcon enemyImage;
     private boolean playerTurn = true;
@@ -38,17 +39,20 @@ public class Arina extends JFrame {
 
         playerImageLabel = new JLabel(playerImage);
         enemyImageLabel = new JLabel(enemyImage);
+
         backButton = new JButton("Back");
         attackButton = new JButton("Attack");
         skilsButton = new JButton("Skills");
         healButton = new JButton("Heal");
         tSusButton = new JButton("TSus");
-        rollButton = new JButton("Roll");
+        rollButton = new CircularButton("Roll");
         state1 = new JLabel(String.valueOf("Player HP : "+HP));
         state2 = new JLabel(String.valueOf("Enemy HP : "+HP2));
         state3 = new JLabel(String.valueOf("Point : " + points));
-
-
+        //LOG
+        Log = new JLabel("");
+        Log.setBounds(50,400,30100,30);
+        Log.setFont(new Font("Serif", Font.BOLD, 30));
 
         // Set bounds for components
         backButton.setBounds(650, 500, 100, 30);
@@ -56,7 +60,7 @@ public class Arina extends JFrame {
         skilsButton.setBounds(180, 500, 100, 30);
         healButton.setBounds(330, 500, 100, 30);
         tSusButton.setBounds(480, 500, 100, 30);
-        rollButton.setBounds(600, 400, 60, 60);
+        rollButton.setBounds(600, 400, 100, 60);
         state1.setBounds(50, 50, 100, 30);
         state2.setBounds(650, 50, 100, 30);
         state3.setBounds(50, 70, 100, 30);
@@ -76,12 +80,14 @@ public class Arina extends JFrame {
         panel.add(rollButton);
         panel.add(playerImageLabel);
         panel.add(enemyImageLabel);
+        panel.add(Log);
 
 
 
+        // bottom
         bottomPanel = new JPanel();
-        bottomPanel.setBounds(0, 500, 800, 100); // Position at the bottom
-        bottomPanel.setBackground(Color.blue);
+        bottomPanel.setBounds(0, 450, 800, 500);
+        bottomPanel.setBackground(Color.GRAY);
         bottomPanel.setLayout(null);
 
         // Set JFrame properties
@@ -106,11 +112,21 @@ public class Arina extends JFrame {
                 setVisible(false);
             }
         });
+
+        Timer timer = new Timer(3000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Log.setText("");
+            }
+        });
         rollButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 RollDice Roll = new RollDice();
-                points += Roll.roll(6,1);
+                int x = Roll.roll(6, 1);
+                points += x;
+                Log.setText("+"+x+" point");
+                timer.start();
                 State();
                 turnEnemy();
                 checkGameOver();
@@ -124,6 +140,7 @@ public class Arina extends JFrame {
                 if (playerTurn && points >= 3) {
                     points -= 3;
                     HP2 -= 10;
+                    Log.setText("Attacked! Enemy HP decreased by 10.");
                     State();
                     turnEnemy();
                     checkGameOver();
@@ -139,6 +156,7 @@ public class Arina extends JFrame {
                 if (points >= 5) {
                     points -= 5;
                     HP2 -= 50;
+                    Log.setText("Attacked! Enemy HP decreased by 50.");
                     State();
                     turnEnemy();
                     checkGameOver();
@@ -153,6 +171,7 @@ public class Arina extends JFrame {
                 if (points >= 5) {
                     points -= 5;
                     HP += 10;
+                    Log.setText("Heal! +50 HP.");
                     State();
                     turnEnemy();
                     checkGameOver();
@@ -168,6 +187,8 @@ public class Arina extends JFrame {
                 if (points >= 20) {
                     points -= 20;
                     HP2 -= 100;
+                    Log.setText("Attacked! Enemy HP decreased by 100.");
+
                     State();
                     turnEnemy();
                     checkGameOver();
@@ -175,6 +196,7 @@ public class Arina extends JFrame {
                 }else JOptionPane.showMessageDialog(null, "You don't have enough points!");
 
             }
+
         });
 
     }
@@ -182,7 +204,7 @@ public class Arina extends JFrame {
     private void State(){
         state1.setText(String.valueOf("Player HP : "+HP));
         state2.setText(String.valueOf("Enemy HP : "+HP2));
-        state3.setText(String.valueOf("Point : " + points));;
+        state3.setText(String.valueOf("Point : " + points));
     }
     private void turnEnemy(){
         RollDice rd = new RollDice();
@@ -214,6 +236,7 @@ public class Arina extends JFrame {
             JOptionPane.showMessageDialog(null, "YOU WIN!!");
             setVisible(false);
         }
+
     }
 
 
