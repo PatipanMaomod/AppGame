@@ -18,6 +18,7 @@ public class Arina extends JFrame {
     private JLabel playerImageLabel;
     private JLabel enemyImageLabel;
     private JLabel Log;
+    private JLabel LogEnamy;
     private ImageIcon playerImage;
     private ImageIcon enemyImage;
     private boolean playerTurn = true;
@@ -59,6 +60,10 @@ public class Arina extends JFrame {
         Log = new JLabel("");
         Log.setBounds(50,400,30100,30);
         Log.setFont(new Font("Serif", Font.BOLD, 30));
+
+        LogEnamy = new JLabel("");
+        LogEnamy.setFont(new Font("Serif", Font.BOLD, 20));
+        LogEnamy.setBounds(50,400,3000,30);
 
         // Set bounds for components
         backButton.setBounds(650, 500, 100, 30);
@@ -162,7 +167,7 @@ public class Arina extends JFrame {
                 if (points >= 5) {
                     points -= 5;
                     HP2 -= 50;
-                    Log.setText("Attacked! Enemy HP decreased by 50.");
+                    Log.setText("Used Skill! Enemy HP decreased by 50.");
                     State();
                     turnEnemy();
                     checkGameOver();
@@ -216,15 +221,19 @@ public class Arina extends JFrame {
         RollDice rd = new RollDice();
         if (turnCount ==3 ) {
             int damage = rd.roll(5, 15);
+            Log.setText("Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount ==5) {
             int damage = rd.roll(15, 30);
+            Log.setText("Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount ==8) {
             int damage = rd.roll(30, 65);
+            Log.setText("Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }if (turnCount >10) {
             int damage = rd.roll(70, 100);
+            Log.setText("Enemy Attack, player's HP decreased by "+damage+".");
             HP -= damage;
         }
         State();
@@ -244,8 +253,6 @@ public class Arina extends JFrame {
         }
 
     }
-
-
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
