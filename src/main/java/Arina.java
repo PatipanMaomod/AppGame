@@ -47,8 +47,14 @@ public class Arina extends JFrame {
         tSusButton = new JButton("TSus");
         rollButton = new CircularButton("Roll");
         state1 = new JLabel(String.valueOf("Player HP : "+HP));
+        state1.setFont(new Font("Serif", Font.BOLD, 20));
+
         state2 = new JLabel(String.valueOf("Enemy HP : "+HP2));
+        state2.setFont(new Font("Serif", Font.BOLD, 20));
+
         state3 = new JLabel(String.valueOf("Point : " + points));
+        state3.setFont(new Font("Serif", Font.BOLD, 20));
+
         //LOG
         Log = new JLabel("");
         Log.setBounds(50,400,30100,30);
@@ -61,9 +67,9 @@ public class Arina extends JFrame {
         healButton.setBounds(330, 500, 100, 30);
         tSusButton.setBounds(480, 500, 100, 30);
         rollButton.setBounds(600, 400, 100, 60);
-        state1.setBounds(50, 50, 100, 30);
-        state2.setBounds(650, 50, 100, 30);
-        state3.setBounds(50, 70, 100, 30);
+        state1.setBounds(50, 50, 1000, 30);//player
+        state2.setBounds(600, 50, 1000, 30);//enemy
+        state3.setBounds(50, 70, 1000, 30);//point
         playerImageLabel.setBounds(50, 120, 200, 200);
         enemyImageLabel.setBounds(500, 120, 200, 250);
 
